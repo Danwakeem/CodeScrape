@@ -4,9 +4,10 @@ const headers = {};
 
 exports.handler = (event, context, callback) => {
     // TODO implement
-    if (_.isObject(event.body)) {
-        if ('lang' in event.body && 'code' in event.body) {
-            scrape.compileCode(event.body.lang, event.body.code)
+    try {
+        const body = JSON.parse(event.body.toString());
+        if ('lang' in body && 'code' in body) {
+            scrape.compileCode(body.lang, body.code)
             .then(output => callback(null, {
                 statusCode: 200,
                 headers,
@@ -19,7 +20,7 @@ exports.handler = (event, context, callback) => {
                 body: JSON.stringify({ error: 'Invalid request body' })
             });    
         }
-    } else {
+    } catch (e) {
         callback(null, {
             statusCode: 500,
             headers,
