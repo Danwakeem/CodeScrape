@@ -1,0 +1,26 @@
+sudo: false
+language: node_js
+node_js:
+- '6'
+before_install:
+- npm i -g npm@3.10.10
+install:
+- npm install
+before_script:
+- npm install -g gulp-cli
+script:
+- gulp
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: lambda
+  function_name: IonicScrape
+  region: us-east-1
+  role: arn:aws:iam::729372212513:role/lambda_basic_execution
+  runtime: nodejs6.10
+  handler_name: handler
+  zip: dist/build.zip
+  access_key_id: AKIAIT5HGD7VHBLGGEVQ
+  secret_access_key:
+    secure: awkX1fdqnqNFRLf1L+8GyL/DBvrERWcEXo43fpYxJaz6/K3tpC0yFw/v+otTnmcXgsKcrvFiVbzMXfYYLrKQBlpwDY6Imt1716aAKqqID0v5IkdpPpTRz5TAvdpAqBMmOu4DqUwAzhr+pqXhWHm23XLbLOQ2ZBzaRZLqh99oJIJQuHGc3MVjBeTHxDvDrzHAZwTbQKznDGuEa6jOv/ODZvutnO0GddHlcYxaCPEcmaslffIwp+PlHHCXfOwXD1azlrbJqNNdY4s4ijWi7woeLTAlmwVTsxsSc23bCrrao/MEG/zEUPXS24izGqBuO7bRQugbnyob9uZY44jbrs0x6uBD5eoLzkrCViOJzQ8t06GPW+V9PnNB54qpuudlxbP0A4ZWJoYPC4NiITQDzGmvEyGFQ8ZLEJT6qKQgOMo0V0G1pKJboChg0KiPZDyhQ8KUadVgcvLJx3HtrYv7xC1uc7fXI68lGEnJbvCmCOf5aMt416Ik7PbdE/Nbw0+k4iI3Xg+zMbh9ebb1mhSUK5fAChZzyb3VITFXJK+ZoDc4T3Jv5zekwO5e9BXG7dXl19Z8r9rwoZUZGzjJ72lM1zr/fH3aKs2JIBw6KUNYGQYnVLcLe2shISox+OLbttndOEcsF97q4Cy6TeEh0Xxmww99JzMwzMyreg1ytVyhHhZuoHk=
