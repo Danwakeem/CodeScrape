@@ -1,0 +1,35 @@
+{
+  "name": "code-scrape",
+  "version": "1.0.0",
+  "description": "And AWS Lambda function",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "gulp": "^3.9.1",
+    "gulp-zip": "^4.0.0",
+    "lodash": "^4.17.4",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-zip": "^4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danwakeem/CodeScrape.git"
+  },
+  "keywords": [
+    "Lambda",
+    "AWS"
+  ],
+  "author": "Danwakeem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Danwakeem/CodeScrape/issues"
+  },
+  "homepage": "https://github.com/Danwakeem/CodeScrape#readme"
+}
