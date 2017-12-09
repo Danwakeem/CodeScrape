@@ -16,7 +16,7 @@ exports.handler = (event, context, callback) => {
             callback(null, {
                 statusCode: 500,
                 headers,
-                body: JSON.stringify({ error: 'Invalid request body' });
+                body: JSON.stringify({ error: 'Invalid request body' })
             });    
         }
     } else {
