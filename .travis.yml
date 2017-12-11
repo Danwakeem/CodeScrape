@@ -9,6 +9,7 @@ install:
 before_script:
 - npm install -g gulp-cli
 script:
+- npm test
 - gulp
 cache:
   directories:
