@@ -7,10 +7,12 @@ before_install:
 install:
 - npm install
 before_script:
-- npm install -g gulp-cli
+- npm install -g gulp-cli coveralls istanbul nyc
 script:
 - npm test
 - gulp
+after_success:
+- npm run coverage
 cache:
   directories:
   - node_modules

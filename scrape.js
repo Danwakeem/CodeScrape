@@ -5,8 +5,13 @@ const run = 'True';
 
 const parseOutput = (outputPage) => {
 	const $ = cheerio.load(outputPage);
-	const output = $($('a[name="output"] + .code .highlight pre')[1]).text();
-	return { output };
+	const codeSection = $('a[name="output"] + .code .highlight pre');
+	if (codeSection.length > 0) {
+		const output = $(codeSection[1]).text();
+		return { output };
+	} else {
+		return { output: 'Error: We are unable to run your code. Please try again later.' }
+	}
 }
 
 const getRedirect = (body) => {
