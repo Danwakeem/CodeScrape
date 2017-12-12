@@ -21,7 +21,7 @@
     "should": "^13.1.3"
   },
   "scripts": {
-    "test": "nyc mocha tests/*.js",
+    "test": "nyc --reporter=lcov --reporter=text-lcov mocha tests/*.js",
     "test:local": "mocha tests/*.js",
     "test:watch": "mocha tests/test.js --watch --reporter min",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
