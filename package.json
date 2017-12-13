@@ -24,7 +24,7 @@
     "test": "nyc --reporter=text-lcov mocha tests/*.js",
     "test:local": "mocha tests/*.js",
     "test:watch": "mocha tests/test.js --watch --reporter min",
-    "coverage": "nyc --reporter=text-lcov mocha tests/*.js | coveralls"
+    "coverage": "nyc --reporter=lcov mocha tests/*.js | coveralls"
   },
   "repository": {
     "type": "git",
