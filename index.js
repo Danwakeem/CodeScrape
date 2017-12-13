@@ -1,6 +1,8 @@
 const scrape = require('./scrape');
 const _ = require('lodash');
-const headers = {};
+const headers = {
+    "Access-Control-Allow-Origin": "*"
+};
 
 exports.handler = (event, context, callback) => {
     // TODO implement
@@ -24,7 +26,7 @@ exports.handler = (event, context, callback) => {
         callback(null, {
             statusCode: 500,
             headers,
-            body: JSON.stringify({ error: 'Missing body' })
+            body: JSON.stringify({ error: 'Missing body', e })
         });
     }
 };
